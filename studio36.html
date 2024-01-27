@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio 36</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.5s;
+            align-items: center;
+            justify-content: center; /* Přidáno pro vertikální zarovnání */
+        }
+
+        header, nav, main, footer {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 1em;
+        }
+
+        header, nav {
+            background-color: #000000;
+            color: #ffffff;
+            width: 100%; /* Přidáno pro zarovnání navigace */
+        }
+
+        h1 {
+            margin-bottom: 0.5em;
+            color: #ffffff;
+            font-size: 2em;
+            font-family: 'Arial', sans-serif; /* Přidáno pro nadpis */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111111;
+            padding: 1em;
+            border-top: 3px solid #ffffff;
+            border-bottom: 3px solid #ffffff;
+            margin-bottom: 1em;
+            font-family: 'Arial', sans-serif; /* Přidáno pro navigaci, použitý font stejný jako u nadpisu */
+        }
+
+        a {
+            text-transform: uppercase; /* Přidáno pro velká písmena */
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5em;
+            transition: color 0.3s;
+            margin: 0 20px;
+        }
+
+        a:hover {
+            color: #cccccc;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        section {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 2em;
+            margin: 1em 0;
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+            border: none;
+            text-align: center; /* Přidáno pro zarovnání obsahu sekce */
+        }
+
+        footer {
+            background-color: #111111;
+            color: #ffffff;
+            border-top: 3px solid #ffffff;
+            margin-top: auto;
+            width: 100%; /* Přidáno pro zarovnání paty */
+            text-align: center; /* Přidáno pro zarovnání textu paty */
+        }
+
+        hr:last-child {
+            margin-bottom: 0;
+        }
+
+        hr:first-child {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>STUDIO36</h1>
+    </header>
+
+    <nav>
+        <a href="#kontakt" onclick="showSection('kontakt')">Kontakt</a>
+        <a href="#domu" onclick="showSection('domu')">Domů</a>
+        <a href="#najdete-nas" onclick="showSection('najdete-nas')">Kde jsme</a>
+    </nav>
+
+    <main>
+        <section id="domu">
+            <h2>Kadeřnictví v Mladé Boleslavi</h2>
+            <p>&nbsp;</p>
+            <p>Otevírací doba podle objednání</p>
+            <p>&nbsp;</p>
+            <p><a href="tel:+420607102261">OBJEDNAT SE</a></p>
+        </section>
+
+        <section id="kontakt">
+            <h2>Alena Prokopová Volfová</h2>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p><a href="tel:+420607102261">TELEFON</a></p>
+        </section>
+
+        <section id="najdete-nas">
+            <h2>Kde mě najdete?</h2>
+            <p>U Stadionu 1234, Mladá Boleslav 293 01</p>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        &copy; 2024 Studio 36
+    </footer>
+
+    <script>
+        // Funkce pro zobrazení specifické sekce
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+
+        // Automatické zobrazení sekce "Domů" po načtení stránky
+        window.onload = function() {
+            showSection('domu');
+        };
+    </script>
+
+</body>
+</html>
