@@ -4,69 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio 36</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.5s;
+            align-items: center;
+            justify-content: center; /* Přidáno pro vertikální zarovnání */
+        }
+
+        header, nav, main, footer {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 1em;
+        }
+
+        header, nav {
+            background-color: #000000;
+            color: #ffffff;
+            width: 100%; /* Přidáno pro zarovnání navigace */
+        }
+
+        h1 {
+            margin-bottom: 0.5em;
+            color: #ffffff;
+            font-size: 2em;
+            font-family: 'Arial', sans-serif; /* Přidáno pro nadpis */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111111;
+            padding: 1em;
+            border-top: 3px solid #ffffff;
+            border-bottom: 3px solid #ffffff;
+            margin-bottom: 1em;
+            font-family: 'Arial', sans-serif; /* Přidáno pro navigaci, použitý font stejný jako u nadpisu */
+        }
+
+        a {
+            text-transform: uppercase; /* Přidáno pro velká písmena */
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5em;
+            transition: color 0.3s;
+            margin: 0 20px;
+        }
+
+        a:hover {
+            color: #cccccc;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        section {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 2em;
+            margin: 1em 0;
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+            border: none;
+            text-align: center; /* Přidáno pro zarovnání obsahu sekce */
+        }
+
+        footer {
+            background-color: #111111;
+            color: #ffffff;
+            border-top: 3px solid #ffffff;
+            margin-top: auto;
+            width: 100%; /* Přidáno pro zarovnání paty */
+            text-align: center; /* Přidáno pro zarovnání textu paty */
+        }
+
+        hr:last-child {
+            margin-bottom: 0;
+        }
+
+        hr:first-child {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Vítejte v našem Kadeřnictví</h1>
-            <p>Milý přístup, profesionalita, rychlost objednání</p>
-            <a href="#contact" class="btn">Kontaktujte nás</a>
-        </div>
+
+    <header>
+        <h1>STUDIO36</h1>
     </header>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>Naše Služby</h2>
-        <div class="service-cards">
-            <div class="service-card">
-                <h3>Střihání</h3>
-                <p>Profesionální střihání na míru.</p>
-            </div>
-            <div class="service-card">
-                <h3>Barvení</h3>
-                <p>Moderní techniky barvení vlasů.</p>
-            </div>
-            <div class="service-card">
-                <h3>Účesy</h3>
-                <p>Účesy pro každou příležitost.</p>
-            </div>
-        </div>
-    </section>
+    <nav>
+        <a href="#kontakt" onclick="showSection('kontakt')">Kontakt</a>
+        <a href="#domu" onclick="showSection('domu')">Domů</a>
+        <a href="#najdete-nas" onclick="showSection('najdete-nas')">Kde jsme</a>
+    </nav>
 
-    <!-- Team Section -->
-    <section id="team" class="team">
-        <h2>Náš Tým</h2>
-        <div class="team-members">
-            <div class="team-member">
-                <img src="stylist1.jpg" alt="Stylistka 1">
-                <h3>Anna Nováková</h3>
-                <p>Hlavní stylistka</p>
-            </div>
-            <div class="team-member">
-                <img src="stylist2.jpg" alt="Stylistka 2">
-                <h3>Petra Malá</h3>
-                <p>Expert na barvení</p>
-            </div>
-            <div class="team-member">
-                <img src="stylist3.jpg" alt="Stylista 3">
-                <h3>Jan Svoboda</h3>
-                <p>Specialista na střihy</p>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section id="domu">
+            <h2>Kadeřnictví v Mladé Boleslavi</h2>
+            <p>&nbsp;</p>
+            <p>Otevírací doba podle objednání</p>
+            <p>&nbsp;</p>
+            <p><a href="tel:+420607102261">OBJEDNAT SE</a></p>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Kontaktujte nás</h2>
-        <p>Telefon: +420 607 102 261</p>
-        <p>Email: volfova.alenka@seznam.cz</p>
-        <p>Adresa: U Stadionu 1234, Mladá Boleslav 29301</p>
-    </section>
+        <section id="kontakt">
+            <h2>Alena Prokopová Volfová</h2>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p><a href="tel:+420607102261">TELEFON</a></p>
+        </section>
+
+        <section id="najdete-nas">
+            <h2>Kde mě najdete?</h2>
+            <p>U Stadionu 1234, Mladá Boleslav 293 01</p>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Kadeřnictví Studio 36. Všechna práva vyhrazena.</p>
+        <hr>
+        &copy; 2024 Studio 36
     </footer>
+
+    <script>
+        // Funkce pro zobrazení specifické sekce
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+
+        // Automatické zobrazení sekce "Domů" po načtení stránky
+        window.onload = function() {
+            showSection('domu');
+        };
+    </script>
+
 </body>
 </html>
