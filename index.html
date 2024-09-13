@@ -16,6 +16,8 @@
             background-color: #121212;
             color: white;
             overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
         }
 
         header {
@@ -29,7 +31,7 @@
         }
 
         header img {
-            height: 60px; /* Výška loga */
+            height: 60px;
             width: auto;
         }
 
@@ -37,7 +39,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100px; /* Přizpůsobení výšky navigace podle výšky hlavičky */
+            height: 100px;
         }
 
         nav a {
@@ -54,7 +56,6 @@
             transform: scale(1.05);
         }
 
-        /* Zlatá čára při hoveru */
         nav a::after {
             content: '';
             position: absolute;
@@ -62,7 +63,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background-color: #FFD700; /* Zlatá barva */
+            background-color: #FFD700;
             transition: width 0.3s ease;
         }
 
@@ -139,6 +140,9 @@
             padding: 20px;
             background-color: #000;
             color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -205,7 +209,7 @@
 
         function showSlides() {
             currentIndex++;
-            if (currentIndex === totalSlides / 2) { // Only 6 slides, but show only 3 at a time
+            if (currentIndex === totalSlides / 2) {
                 currentIndex = 0;
             }
             slides.style.transform = `translateX(${-currentIndex * 33.33}%)`;
@@ -213,7 +217,7 @@
 
         setInterval(function() {
             showSlides();
-        }, 3000); // Slide every 3 seconds
+        }, 3000);
 
         // Navigation functionality
         const links = document.querySelectorAll('nav a');
