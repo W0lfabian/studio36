@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kadeřnictví - Studio 36</title>
+    <title>Kadeřnictví - Studio36</title>
     <style>
         * {
             margin: 0;
@@ -21,24 +21,23 @@
         header {
             background-color: #000;
             color: white;
-            padding: 20px;
+            height: 100px;
+            padding: 0 20px;
             display: flex;
             align-items: center;
-        }
-
-        header a {
-            display: block;
+            justify-content: space-between;
         }
 
         header img {
-            height: 60px;
+            height: 60px; /* Výška loga */
+            width: auto;
         }
 
         nav {
-            background-color: #000;
             display: flex;
             justify-content: center;
-            position: relative;
+            align-items: center;
+            height: 100px; /* Přizpůsobení výšky navigace podle výšky hlavičky */
         }
 
         nav a {
@@ -55,7 +54,7 @@
             transform: scale(1.05);
         }
 
-        /* Line animation */
+        /* Zlatá čára při hoveru */
         nav a::after {
             content: '';
             position: absolute;
@@ -91,7 +90,6 @@
             display: block;
         }
 
-        /* Slideshow container */
         .slideshow-container {
             max-width: 1000px;
             position: relative;
@@ -106,7 +104,7 @@
         }
 
         .slide {
-            min-width: 33.33%; /* Three slides visible */
+            min-width: 33.33%;
             box-sizing: border-box;
         }
 
@@ -136,59 +134,50 @@
             background-color: #eee;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
             background-color: #000;
             color: white;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#domu"><img src="studio36.png" alt="Logo" id="logo"></a>
+        <!-- Logo -->
+        <a href="#domu"><img src="studio36.png" alt="Studio 36 Logo"></a>
+        <!-- Navigace -->
+        <nav>
+            <a href="#" data-section="domu">Domů</a>
+            <a href="#" data-section="sluzby">Služby</a>
+            <a href="#" data-section="cenik">Ceník</a>
+            <a href="#" data-section="kontakt">Kontakt</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#" data-section="domu">Domů</a>
-        <a href="#" data-section="sluzby">Služby</a>
-        <a href="#" data-section="cenik">Ceník</a>
-        <a href="#" data-section="kontakt">Kontakt</a>
-    </nav>
-
-    <!-- Section Domů -->
+    <!-- Sekce Domů -->
     <section id="domu">
         <div class="slideshow-container">
             <div class="slides">
                 <div class="slide">
-                    <img src="image1.jpg" alt="Obrázek 1">
+                    <img src="1.jpg" alt="Obrázek 1">
                 </div>
                 <div class="slide">
-                    <img src="image2.jpg" alt="Obrázek 2">
+                    <img src="2.jpg" alt="Obrázek 2">
                 </div>
                 <div class="slide">
-                    <img src="image3.jpg" alt="Obrázek 3">
+                    <img src="3.jpg" alt="Obrázek 3">
                 </div>
                 <div class="slide">
-                    <img src="image4.jpg" alt="Obrázek 4">
-                </div>
-                <div class="slide">
-                    <img src="image5.jpg" alt="Obrázek 5">
-                </div>
-                <div class="slide">
-                    <img src="image6.jpg" alt="Obrázek 6">
+                    <img src="4.jpg" alt="Obrázek 4">
                 </div>
             </div>
         </div>
         <button class="order-btn" onclick="callOrder()">OBJEDNAT</button>
     </section>
 
-    <!-- Other Sections -->
+    <!-- Další sekce -->
     <section id="sluzby">
         <h2>Služby</h2>
         <p>Obsah o našich službách...</p>
