@@ -157,14 +157,16 @@
             }
 
             nav {
-                height: 80px;
+                height: auto;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
 
             nav a {
-                padding: 10px 20px;
+                padding: 10px 0;
                 font-size: 16px;
+                width: 100%; /* Zarovná záložky přes celou šířku obrazovky */
+                text-align: center;
             }
 
             .slide img {
@@ -206,14 +208,16 @@
             }
 
             nav {
-                height: 60px;
+                height: auto;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
 
             nav a {
-                padding: 8px 16px;
+                padding: 8px 0;
                 font-size: 14px;
+                width: 100%;
+                text-align: center;
             }
 
             .slide img {
@@ -228,6 +232,18 @@
 
             section {
                 padding: 10px;
+            }
+
+            .slideshow-container {
+                max-width: 100%;
+            }
+
+            .slides {
+                flex-direction: column;
+            }
+
+            .slide {
+                min-width: 100%;
             }
         }
     </style>
@@ -331,5 +347,3 @@
         }
     </script>
 
-</body>
-</html>
