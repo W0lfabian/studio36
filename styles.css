@@ -84,7 +84,7 @@ section {
 }
 
 .slideshow-container {
-    max-width: 1000px;
+    max-width: 100%;
     position: relative;
     margin: auto;
     overflow: hidden;
@@ -98,13 +98,13 @@ section {
 }
 
 .slide {
-    min-width: 33.33%; /* Tři obrázky vedle sebe */
+    flex: 1 0 33.33%; /* Tři obrázky vedle sebe */
     box-sizing: border-box;
 }
 
 .slide img {
     width: 100%;
-    height: auto; /* Přizpůsobí výšku obrázků automaticky */
+    height: 300px; /* Nastavená výška pro lepší zobrazení */
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
