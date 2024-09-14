@@ -1,3 +1,4 @@
+// Slideshow obrázků v sekci Domů
 let currentIndex = 0;
 const slides = document.querySelector('.slides');
 const totalSlides = document.querySelectorAll('.slide').length;
@@ -10,7 +11,7 @@ function showSlides() {
     slides.style.transform = `translateX(${-currentIndex * 50}%)`;
 }
 
-setInterval(showSlides, 3000); // Rychlejší animace
+setInterval(showSlides, 3000);
 
 const links = document.querySelectorAll('nav a');
 const sections = document.querySelectorAll('section');
@@ -51,11 +52,10 @@ function plusSlides(n) {
 }
 
 function showSlidesModal(n) {
-    let i;
     const slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     slides[slideIndex - 1].style.display = "block";
