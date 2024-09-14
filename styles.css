@@ -94,18 +94,17 @@ section {
 .slides {
     display: flex;
     justify-content: space-between;
-    transition: transform 1s ease;
 }
 
 .slide {
     min-width: 50%;
-    margin: 0 10px; /* mezera mezi obrázky */
+    margin: 0 15px; /* Mezera mezi obrázky */
     box-sizing: border-box;
 }
 
 .slide img {
     width: 100%;
-    height: auto;
+    height: 300px; /* Upravte velikost dle potřeby */
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
@@ -241,4 +240,10 @@ footer {
     footer {
         position: relative;
     }
+}
+
+/* Dodatečné styly pro oddělení sekcí */
+.section-separator {
+    background-color: #1e1e1e; /* Tmavší šedá barva */
+    height: 20px; /* Výška oddělení */
 }
