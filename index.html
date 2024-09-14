@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kadeřnictví - Studio36</title>
+    <title>Studio 36</title>
     <style>
         * {
             margin: 0;
@@ -15,13 +15,15 @@
             font-family: Arial, sans-serif;
             background-color: #121212;
             color: white;
-            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         header {
             background-color: #000;
             color: white;
-            height: 100px;
+            height: 60px;
             padding: 0 20px;
             display: flex;
             align-items: center;
@@ -29,7 +31,7 @@
         }
 
         header img {
-            height: 60px;
+            height: 40px;
             width: auto;
         }
 
@@ -41,232 +43,112 @@
 
         nav a {
             color: white;
-            padding: 10px 20px;
+            padding: 5px 10px;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 18px;
+            font-size: 14px;
             position: relative;
-            transition: transform 0.3s ease;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            transform: scale(1.05);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #FFD700;
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        section {
-            display: none;
-            padding: 40px;
-            max-width: 1000px;
-            margin: 20px auto;
-            background-color: #222;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.5s forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .active {
-            display: block;
+            color: #ffd700;
         }
 
         .slideshow-container {
-            max-width: 1000px;
-            position: relative;
-            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .slideshow {
+            width: 90%;
+            display: flex;
             overflow: hidden;
-            display: flex;
+            justify-content: center;
         }
 
-        .slides {
-            display: flex;
-            transition: transform 1s ease;
-        }
-
-        .slide {
-            min-width: 50%;
-            box-sizing: border-box;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+        .slideshow img {
+            width: 48%;
+            margin: 0 2%;
             border-radius: 8px;
         }
 
         .order-btn {
-            display: block;
-            width: 200px;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: #fff;
-            color: #000;
-            text-align: center;
+            background-color: white;
+            color: black;
             border: none;
-            border-radius: 5px;
-            font-size: 18px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-size: 14px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: 0.3s;
         }
 
         .order-btn:hover {
-            background-color: #eee;
+            background-color: #ffd700;
+            color: black;
         }
 
         footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #000;
+            margin-top: auto;
+            background-color: black;
             color: white;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+            text-align: center;
+            padding: 10px;
         }
 
-        /* Mobilní zobrazení */
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             header {
-                flex-direction: column;
-                height: auto;
-                padding: 10px;
+                height: 80px;
             }
 
-            nav {
-                flex-direction: column;
-                justify-content: center;
+            header img {
+                height: 60px;
             }
 
-            .slideshow-container {
-                flex-direction: column;
+            nav a {
+                font-size: 18px;
+                padding: 10px 20px;
             }
 
-            .slide {
-                min-width: 100%;
-            }
-
-            .slide img {
-                height: auto;
+            .slideshow img {
+                width: 30%;
+                margin: 0 1.5%;
             }
 
             .order-btn {
-                margin-bottom: 20px;
+                padding: 15px 30px;
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <!-- Logo -->
-        <a href="#domu"><img src="studio36.png" alt="Studio 36 Logo"></a>
-        <!-- Navigace -->
-        <nav>
-            <a href="#" data-section="domu">Domů</a>
-            <a href="#" data-section="sluzby">Služby</a>
-            <a href="#" data-section="cenik">Ceník</a>
-            <a href="#" data-section="kontakt">Kontakt</a>
-        </nav>
-    </header>
+<header>
+    <img src="logo.png" alt="Logo">
+    <nav>
+        <a href="#sluzby">Služby</a>
+        <a href="#cenik">Ceník</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+</header>
 
-    <!-- Sekce Domů -->
-    <section id="domu">
-        <div class="slideshow-container">
-            <div class="slides">
-                <div class="slide">
-                    <img src="1.png" alt="Obrázek 1">
-                </div>
-                <div class="slide">
-                    <img src="2.png" alt="Obrázek 2">
-                </div>
-                <div class="slide">
-                    <img src="3.png" alt="Obrázek 3">
-                </div>
-                <div class="slide">
-                    <img src="4.png" alt="Obrázek 4">
-                </div>
-            </div>
-        </div>
-        <button class="order-btn" onclick="callOrder()">OBJEDNAT</button>
-    </section>
+<div class="slideshow-container">
+    <div class="slideshow">
+        <img src="photo1.jpg" alt="Photo 1">
+        <img src="photo2.jpg" alt="Photo 2">
+    </div>
+    <button class="order-btn">Objednat</button>
+</div>
 
-    <section id="sluzby">
-        <h2>Služby</h2>
-        <p>Obsah o našich službách...</p>
-    </section>
-
-    <section id="cenik">
-        <h2>Ceník</h2>
-        <p>Ceník našich služeb...</p>
-    </section>
-
-    <section id="kontakt">
-        <h2>Kontakt</h2>
-        <p>Zde jsou kontaktní údaje...</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Kadeřnictví - Všechna práva vyhrazena.</p>
-    </footer>
-
-    <script>
-        // Slide show function
-        let currentIndex = 0;
-        const slides = document.querySelector('.slides');
-        const totalSlides = document.querySelectorAll('.slide').length;
-
-        function showSlides() {
-            currentIndex++;
-            if (currentIndex === totalSlides / 2) {
-                currentIndex = 0;
-            }
-            slides.style.transform = `translateX(${-currentIndex * 50}%)`;
-        }
-
-        setInterval(function() {
-            showSlides();
-        }, 3000);
-
-        const links = document.querySelectorAll('nav a');
-        const sections = document.querySelectorAll('section');
-
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetSection = document.querySelector(`#${this.dataset.section}`);
-
-                sections.forEach(section => {
-                    section.classList.remove('active');
-                });
-
-                targetSection.classList.add('active');
-            });
-        });
-
-        document.getElementById('domu').classList.add('active');
-
-        function callOrder() {
-            window.location.href = 'tel:607102261';
-        }
-    </script>
+<footer>
+    © 2024 Studio 36 - Všechna práva vyhrazena.
+</footer>
 
 </body>
 </html>
