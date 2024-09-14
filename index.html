@@ -200,36 +200,60 @@
         <div class="slideshow-container">
             <div class="slides">
                 <div class="slide">
-                    <img src="1.png" alt="Obrázek 1" onclick="openGallery(0)">
+                    <img src="images/1.png" alt="Obrázek 1" onclick="openGallery(0)">
                 </div>
                 <div class="slide">
-                    <img src="2.png" alt="Obrázek 2" onclick="openGallery(1)">
+                    <img src="images/2.png" alt="Obrázek 2" onclick="openGallery(1)">
                 </div>
                 <div class="slide">
-                    <img src="3.png" alt="Obrázek 3" onclick="openGallery(2)">
+                    <img src="images/3.png" alt="Obrázek 3" onclick="openGallery(2)">
                 </div>
-                <div class="slide">
-                    <img src="4.png" alt="Obrázek 4" onclick="openGallery(3)">
-                </div>
+                <!-- Přidejte více obrázků podle potřeby -->
             </div>
         </div>
         <button class="order-btn" onclick="callOrder()">OBJEDNAT</button>
     </section>
 
+    <!-- Sekce Služby -->
     <section id="sluzby">
         <h2>Služby</h2>
         <p>Obsah o našich službách...</p>
     </section>
 
+    <!-- Sekce Ceník -->
     <section id="cenik">
         <h2>Ceník</h2>
         <p>Ceník našich služeb...</p>
     </section>
 
+    <!-- Sekce Kontakt -->
     <section id="kontakt">
         <h2>Kontakt</h2>
         <p>Zde jsou kontaktní údaje...</p>
     </section>
+
+    <!-- Modal pro fotogalerii -->
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeGallery()">&times;</span>
+        <div class="modal-content">
+            <div class="mySlides">
+                <img src="images/1.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="images/2.png" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="images/3.png" style="width:100%">
+            </div>
+
+            <!-- Přidejte další obrázky podle potřeby -->
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2024 Studio 36 - Všechna práva vyhrazena.</p>
@@ -274,8 +298,32 @@
 
         // Fotogalerie
         function openGallery(index) {
-            alert("Otevřít fotogalerii pro obrázek " + (index + 1));
-            // Zde můžeš přidat skript pro otevření galerie
+            document.getElementById('myModal').style.display = 'block';
+            currentSlide(index);
+        }
+
+        function closeGallery() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        let slideIndex = 1;
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
         }
     </script>
 </body>
