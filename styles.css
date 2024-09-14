@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Základní styly */
 * {
     margin: 0;
@@ -12,6 +10,7 @@ body {
     background-color: #121212;
     color: white;
     overflow-x: hidden;
+    position: relative;
 }
 
 header {
@@ -72,54 +71,73 @@ section {
     background-color: #222;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s forwards;
 }
 
-section.active {
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.active {
     display: block;
 }
 
-/* Slideshow styles */
 .slideshow-container {
+    max-width: 100%;
     position: relative;
-    width: 100%;
+    margin: auto;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .slides {
     display: flex;
-    transition: transform 1s ease;
+    transition: transform 1s ease-in-out;
 }
 
 .slide {
-    min-width: 50%;
+    flex: 1 0 50%;
+    margin: 0 30px; /* Zvýšená mezera mezi obrázky */
     box-sizing: border-box;
-    padding: 0 20px; /* Adjust padding for spacing between images */
 }
 
 .slide img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: 300px; /* Nastavená výška pro lepší zobrazení */
+    object-fit: cover;
     border-radius: 8px;
+    cursor: pointer;
 }
 
-/* Tlačítko Objednat */
 .order-btn {
-    position: absolute;
-    bottom: 20px; /* Adjust this value to position the button correctly */
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
     border: none;
-    cursor: pointer;
-    font-size: 16px;
     border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .order-btn:hover {
-    background-color: #ddd;
+    background-color: #eee;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
 
 /* Modal styles */
@@ -140,7 +158,6 @@ section.active {
     display: block;
     width: 80%;
     max-width: 700px;
-    position: relative;
 }
 
 .mySlides {
@@ -151,7 +168,6 @@ section.active {
     width: 100%;
 }
 
-/* Kontrolní tlačítka v modal */
 .close {
     position: absolute;
     top: 15px;
@@ -184,6 +200,15 @@ section.active {
     border-radius: 3px 0 0 3px;
 }
 
+.modal-content {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* Mobilní zobrazení */
 @media (max-width: 768px) {
     header {
@@ -202,12 +227,19 @@ section.active {
     }
 
     .slide {
-        min-width: 100%;
-        padding: 0;
+        flex: 1 0 100%;
+        margin: 0;
+    }
+
+    .slide img {
+        height: auto;
     }
 
     .order-btn {
-        position: static;
-        margin: 20px 0;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        position: relative;
     }
 }
