@@ -94,11 +94,12 @@ section {
 
 .slides {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 1s ease-in-out; /* Rychlejší animace */
 }
 
 .slide {
-    flex: 1 0 33.33%; /* Tři obrázky vedle sebe */
+    flex: 1 0 50%; /* Dvě fotky vedle sebe */
+    margin: 0 20px; /* Větší mezera mezi obrázky */
     box-sizing: border-box;
 }
 
@@ -226,11 +227,12 @@ footer {
     }
 
     .slide {
-        min-width: 100%;
+        flex: 1 0 100%; /* Jeden obrázek na šířku */
+        margin: 0; /* Žádná mezera mezi obrázky */
     }
 
     .slide img {
-        height: auto;
+        height: auto; /* Autom. výška */
     }
 
     .order-btn {
