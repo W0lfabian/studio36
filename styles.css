@@ -86,19 +86,18 @@ section {
 .slideshow-container {
     max-width: 1000px;
     position: relative;
-    margin: auto;
+    margin: 20px auto; /* Přidání mezery nahoře a dole */
     overflow: hidden;
-    display: flex;
 }
 
 .slides {
     display: flex;
-    justify-content: space-between;
+    transition: transform 1s ease-in-out;
 }
 
 .slide {
     min-width: 50%;
-    margin: 0 15px; /* Mezera mezi obrázky */
+    margin: 0 10px; /* Mezera mezi obrázky */
     box-sizing: border-box;
 }
 
@@ -240,10 +239,4 @@ footer {
     footer {
         position: relative;
     }
-}
-
-/* Dodatečné styly pro oddělení sekcí */
-.section-separator {
-    background-color: #1e1e1e; /* Tmavší šedá barva */
-    height: 20px; /* Výška oddělení */
 }
