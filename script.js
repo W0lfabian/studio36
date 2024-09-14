@@ -1,66 +1,39 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('nav a');
-    const sections = document.querySelectorAll('section');
+// script.js
 
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetSection = document.querySelector(`#${this.dataset.section}`);
+// Funkce pro otevření galerie
+function openGallery(index) {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'block';
+    currentSlide(index);
+}
 
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
+// Funkce pro zavření galerie
+function closeGallery() {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+}
 
-            targetSection.classList.add('active');
-        });
-    });
+// Funkce pro změnu slide
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
 
-    // Slideshow script
-    let currentIndex = 0;
-    const slides = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slide').length;
-
-    function showSlides() {
-        currentIndex++;
-        if (currentIndex >= totalSlides) {
-            currentIndex = 0;
-        }
-        slides.style.transform = `translateX(${-currentIndex * 50}%)`;
+// Funkce pro zobrazení slide
+function showSlides(n) {
+    const slides = document.getElementsByClassName('mySlides');
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
     }
+    slides[slideIndex - 1].style.display = 'block';
+}
 
-    setInterval(showSlides, 3000); // Rychlejší animace
+// Funkce pro inicializaci slideru
+let slideIndex = 1;
+showSlides(slideIndex);
 
-    // Modal script
-    function callOrder() {
-        window.location.href = 'tel:607102261';
-    }
-
-    function openGallery(index) {
-        document.getElementById('myModal').style.display = 'block';
-        currentSlide(index);
-    }
-
-    function closeGallery() {
-        document.getElementById('myModal').style.display = 'none';
-    }
-
-    let slideIndex = 1;
-    function currentSlide(n) {
-        showSlidesModal(slideIndex = n);
-    }
-
-    function plusSlides(n) {
-        showSlidesModal(slideIndex += n);
-    }
-
-    function showSlidesModal(n) {
-        let i;
-        const slides = document.getElementsByClassName("mySlides");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[slideIndex - 1].style.display = "block";
-    }
-});
+// Funkce pro volání objednávky
+function callOrder() {
+    window.location.href = 'tel:607102261';
+}
