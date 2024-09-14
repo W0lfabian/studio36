@@ -10,7 +10,7 @@ function showSlides() {
     slides.style.transform = `translateX(${-currentIndex * 50}%)`;
 }
 
-setInterval(showSlides, 3000); // Změněno na 3000 ms pro plynulejší animaci
+setInterval(showSlides, 3000); // Rychlejší animace
 
 const links = document.querySelectorAll('nav a');
 const sections = document.querySelectorAll('section');
