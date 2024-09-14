@@ -84,28 +84,28 @@ section {
 }
 
 .slideshow-container {
-    max-width: 100%;
+    max-width: 1000px;
     position: relative;
     margin: auto;
     overflow: hidden;
     display: flex;
-    justify-content: center;
 }
 
 .slides {
     display: flex;
-    transition: transform 1s ease-in-out;
+    justify-content: space-between;
+    transition: transform 1s ease;
 }
 
 .slide {
-    flex: 1 0 50%;
-    margin: 0 30px; /* Zvýšená mezera mezi obrázky */
+    min-width: 50%;
+    margin: 0 10px; /* mezera mezi obrázky */
     box-sizing: border-box;
 }
 
 .slide img {
     width: 100%;
-    height: 300px; /* Nastavená výška pro lepší zobrazení */
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
@@ -227,8 +227,7 @@ footer {
     }
 
     .slide {
-        flex: 1 0 100%;
-        margin: 0;
+        min-width: 100%;
     }
 
     .slide img {
