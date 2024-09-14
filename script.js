@@ -3,13 +3,13 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 // Funkce pro otevření modalu
-function openModal(n) {
+function openGallery(n) {
     document.getElementById("myModal").style.display = "block";
-    currentSlide(n);
+    currentSlide(n + 1); // JS arrays are zero-based but slideIndex is 1-based
 }
 
 // Funkce pro zavření modalu
-function closeModal() {
+function closeGallery() {
     document.getElementById("myModal").style.display = "none";
 }
 
@@ -54,3 +54,17 @@ function carousel() {
 function callOrder() {
     window.location.href = 'tel:607102261';
 }
+
+// Navigace mezi sekcemi
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetSection = document.querySelector(`#${this.dataset.section}`);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.remove('active');
+        });
+
+        targetSection.classList.add('active');
+    });
+});
