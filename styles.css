@@ -1,49 +1,89 @@
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #000;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-/* Slideshow */
-.slideshow-container {
-    max-width: 1000px; /* Nastavení maximální šířky slideshow */
-    position: relative;
-    margin: 20px auto; /* Přidání okraje pro lepší zarovnání */
-    overflow: hidden;
-    display: flex;
-    justify-content: center; /* Středění obrázků */
-}
+/* Zbytek tvého CSS kódu */
 
 .slides {
     display: flex;
-    transition: transform 1s ease;
-    width: 100%; /* Obrázky budou zarovnány na celou šířku kontejneru */
+    justify-content: space-between;
 }
 
 .slide {
-    min-width: 50%; /* Každý obrázek zabírá 50% šířky */
-    box-sizing: border-box;
-    padding: 0 10px; /* Přidání mezery mezi obrázky */
+    margin: 0 10px; /* mezera mezi obrázky */
 }
 
-.slide img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Obrázky budou oříznuty a přizpůsobeny kontejneru */
-    border-radius: 8px;
-}
-
-/* Dolní banner */
 footer {
-    text-align: center;
-    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: #000;
     color: white;
-    position: relative; /* Oprava pozice, aby footer nezakrýval obsah */
+    text-align: center;
+    padding: 10px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
     width: 100%;
-    bottom: 0;
-    margin-top: 20px; /* Přidání horního okraje pro oddělení od obsahu */
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.modal-content {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
