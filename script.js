@@ -37,3 +37,15 @@ showSlides(slideIndex);
 function callOrder() {
     window.location.href = 'tel:607102261';
 }
+
+// Funkce pro změnu sekce
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const sectionId = this.getAttribute('data-section');
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+    });
+});
