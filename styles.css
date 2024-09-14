@@ -94,12 +94,12 @@ section {
 
 .slides {
     display: flex;
-    transition: transform 1s ease-in-out; /* Rychlejší animace */
+    transition: transform 1s ease-in-out;
 }
 
 .slide {
-    flex: 1 0 50%; /* Dvě fotky vedle sebe */
-    margin: 0 20px; /* Větší mezera mezi obrázky */
+    flex: 1 0 50%;
+    margin: 0 30px; /* Zvýšená mezera mezi obrázky */
     box-sizing: border-box;
 }
 
@@ -227,12 +227,12 @@ footer {
     }
 
     .slide {
-        flex: 1 0 100%; /* Jeden obrázek na šířku */
-        margin: 0; /* Žádná mezera mezi obrázky */
+        flex: 1 0 100%;
+        margin: 0;
     }
 
     .slide img {
-        height: auto; /* Autom. výška */
+        height: auto;
     }
 
     .order-btn {
