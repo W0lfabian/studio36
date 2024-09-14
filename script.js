@@ -1,30 +1,58 @@
-// Slideshow obrázků v sekci Domů
-let slideIndex = 1;
-showSlides(slideIndex);
+let currentIndex = 0;
+const slides = document.querySelector('.slides');
+const totalSlides = document.querySelectorAll('.slide').length;
 
-// Funkce pro otevření modalu
-function openGallery(n) {
-    document.getElementById("myModal").style.display = "block";
-    currentSlide(n + 1); // JS arrays are zero-based but slideIndex is 1-based
+function showSlides() {
+    currentIndex++;
+    if (currentIndex === totalSlides / 2) {
+        currentIndex = 0;
+    }
+    slides.style.transform = `translateX(${-currentIndex * 50}%)`;
 }
 
-// Funkce pro zavření modalu
+setInterval(function() {
+    showSlides();
+}, 3000);
+
+const links = document.querySelectorAll('nav a');
+const sections = document.querySelectorAll('section');
+
+links.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetSection = document.querySelector(`#${this.dataset.section}`);
+
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        targetSection.classList.add('active');
+    });
+});
+
+function callOrder() {
+    window.location.href = 'tel:607102261';
+}
+
+function openGallery(index) {
+    document.getElementById('myModal').style.display = 'block';
+    currentSlide(index);
+}
+
 function closeGallery() {
-    document.getElementById("myModal").style.display = "none";
+    document.getElementById('myModal').style.display = 'none';
 }
 
-// Funkce pro zobrazení předchozích a následujících snímků v modalu
-function plusSlides(n) {
-    currentSlide(slideIndex += n);
-}
-
-// Funkce pro nastavení aktuálního snímku
+let slideIndex = 1;
 function currentSlide(n) {
-    showSlides(slideIndex = n);
+    showSlidesModal(slideIndex = n);
 }
 
-// Funkce pro zobrazení snímků v modalu
-function showSlides(n) {
+function plusSlides(n) {
+    showSlidesModal(slideIndex += n);
+}
+
+function showSlidesModal(n) {
     let i;
     const slides = document.getElementsByClassName("mySlides");
     if (n > slides.length) { slideIndex = 1 }
@@ -34,37 +62,3 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
 }
-
-// Automatické přepínání snímků v sekci Domů
-let autoIndex = 0;
-carousel();
-
-function carousel() {
-    const slides = document.getElementsByClassName("slide");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    autoIndex++;
-    if (autoIndex > slides.length) { autoIndex = 1 }
-    slides[autoIndex - 1].style.display = "block";
-    setTimeout(carousel, 3000); // Změna každé 3 sekundy
-}
-
-// Funkce pro volání
-function callOrder() {
-    window.location.href = 'tel:607102261';
-}
-
-// Navigace mezi sekcemi
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetSection = document.querySelector(`#${this.dataset.section}`);
-
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.remove('active');
-        });
-
-        targetSection.classList.add('active');
-    });
-});
