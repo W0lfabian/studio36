@@ -7,3 +7,43 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/* Slideshow */
+.slideshow-container {
+    max-width: 1000px; /* Nastavení maximální šířky slideshow */
+    position: relative;
+    margin: 20px auto; /* Přidání okraje pro lepší zarovnání */
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Středění obrázků */
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease;
+    width: 100%; /* Obrázky budou zarovnány na celou šířku kontejneru */
+}
+
+.slide {
+    min-width: 50%; /* Každý obrázek zabírá 50% šířky */
+    box-sizing: border-box;
+    padding: 0 10px; /* Přidání mezery mezi obrázky */
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Obrázky budou oříznuty a přizpůsobeny kontejneru */
+    border-radius: 8px;
+}
+
+/* Dolní banner */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: white;
+    position: relative; /* Oprava pozice, aby footer nezakrýval obsah */
+    width: 100%;
+    bottom: 0;
+    margin-top: 20px; /* Přidání horního okraje pro oddělení od obsahu */
+}
